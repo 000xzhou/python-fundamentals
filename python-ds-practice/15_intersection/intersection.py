@@ -13,3 +13,10 @@ def intersection(l1, l2):
         >>> intersection([1, 2, 3], [4, 5, 6])
         []
     """
+    l3 = l1+l2
+    s1 = {}
+    for i, value in enumerate(l3):
+        if l3.count(value) >= 2:
+            s1[value] = i
+    return list(s1.keys())
+    

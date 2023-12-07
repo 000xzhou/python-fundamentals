@@ -11,3 +11,11 @@ def mode(nums):
         >>> mode([2, 2, 3, 3, 2])
         2
     """
+    n = {}
+    for num in nums:
+        if num in n:
+            n[num] += 1
+        else:
+            n[num] = 1
+            
+    return max(zip(n.values(), n.keys()))[1]
