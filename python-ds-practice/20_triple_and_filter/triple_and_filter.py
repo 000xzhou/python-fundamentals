@@ -13,3 +13,8 @@ def triple_and_filter(nums):
         >>> triple_and_filter([1, 2])
         []
     """
+    is_int = []
+    for num in nums:
+        if num%4 == 0:
+            is_int.append(num*3)
+    return is_int
