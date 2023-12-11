@@ -27,5 +27,19 @@ def is_odd_string(word):
         >>> is_odd_string('amazing')
         True
     """
+    sum = 0
+    for letter in word:
+        sum += ord(letter)
+    return sum%2 != 0
 
     # Hint: you may find the ord() function useful here
+    
+assert is_odd_string('a') is True
+
+assert is_odd_string('A') is True
+    
+assert is_odd_string('aaaa') is False
+
+assert is_odd_string('AAaa') is False
+    
+assert is_odd_string('amazing') is True
