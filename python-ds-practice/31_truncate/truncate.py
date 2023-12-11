@@ -21,6 +21,25 @@ def truncate(phrase, n):
         >>> truncate("Woah", 4)
         'W...'
 
-        >>> truncate("Woah", 3)
+        >>> truncate("Woah", 3)s
         '...'
     """
+    if n >= 3:
+        if n > len(phrase):
+            return phrase
+        return phrase[0:n-3]+"..."
+    else:
+        return 'Truncation must be at least 3 characters.'
+    # return phrase[0:n-3] + "..." if n >= 3 else 'Truncation must be at least 3 characters.' 
+    
+assert truncate("Hello World", 6) == 'Hel...'
+
+assert truncate("Problem solving is the best!", 10) == 'Problem...'
+
+assert truncate("Yo", 100) == 'Yo'
+
+assert truncate('Cool', 1) == 'Truncation must be at least 3 characters.'
+
+assert truncate("Woah", 4) == 'W...'
+
+assert truncate("Woah", 3) == '...'
