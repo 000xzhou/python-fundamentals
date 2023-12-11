@@ -30,3 +30,31 @@ def includes(collection, sought, start=None):
         >>> includes({"apple": "red", "berry": "blue"}, "blue")
         True
     """
+    if start == None:   
+        if isinstance(collection, dict):
+            return True if sought in collection.values() else False
+        else:
+            return True if sought in collection else False
+    else:
+        if isinstance(collection, set):
+            return True if sought in collection else False
+        for i in range(start, len(collection)):
+            if isinstance(collection, dict):
+                return True if sought in collection.values() else False
+            if sought == collection[i]:
+                return True
+        return False
+
+assert includes([1, 2, 3], 1) == True
+
+assert includes([1, 2, 3], 1, 2) == False
+
+assert includes("hello", "o") == True
+
+assert includes(('Elmo', 5, 'red'), 'red', 1) == True
+
+assert includes({1, 2, 3}, 1) == True
+
+assert includes({1, 2, 3}, 1, 3)  == True # "start" ignored for sets!
+
+assert includes({"apple": "red", "berry": "blue"}, "blue") == True

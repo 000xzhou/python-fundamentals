@@ -7,3 +7,7 @@ def titleize(phrase):
         >>> titleize('oNLy cAPITALIZe fIRSt')
         'Only Capitalize First'
     """
+    return phrase.title()
+
+assert titleize('this is awesome') == 'This Is Awesome'
+assert titleize('oNLy cAPITALIZe fIRSt') == 'Only Capitalize First'
